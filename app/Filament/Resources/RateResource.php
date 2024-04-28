@@ -14,6 +14,7 @@ use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\FileUpload;
 
 class RateResource extends Resource
 {
@@ -25,11 +26,8 @@ class RateResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('rate')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\DatePicker::make('date')
-                    ->required(),
+                FileUpload::make('Rates Data')
+                    ->rules(['required', 'file', 'mimes:xlsx,xls']),
             ]);
     }
 
