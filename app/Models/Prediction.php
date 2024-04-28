@@ -11,6 +11,6 @@ class Prediction extends Model
 
     protected $fillable = [
         'rate',
-        'date'
+        'date',
     ];
 }

@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            RateSeeder::class
+            RateSeeder::class,
         ]);
     }
 }

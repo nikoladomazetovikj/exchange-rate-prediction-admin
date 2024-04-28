@@ -11,17 +11,15 @@ use Maatwebsite\Excel\Concerns\WithValidation;
 class RateImport implements ToModel, WithHeadingRow, WithValidation
 {
     /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
     public function model(array $row)
     {
         $date = Carbon::createFromFormat('d.m.Y', $row['date'])->format('Y-m-d');
 
         return new Rate([
             'date' => $date,
-            'rate' => $row['rate']
+            'rate' => $row['rate'],
         ]);
     }
 
@@ -29,7 +27,7 @@ class RateImport implements ToModel, WithHeadingRow, WithValidation
     {
         return [
             'date' => 'required|date',
-            'rate' => 'required'
+            'rate' => 'required',
         ];
     }
 }

@@ -3,18 +3,15 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\RateResource\Pages;
-use App\Filament\Resources\RateResource\RelationManagers;
 use App\Models\Rate;
-use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\FileUpload;
 
 class RateResource extends Resource
 {
@@ -58,7 +55,7 @@ class RateResource extends Resource
                                 $data['end_date'],
                                 fn (Builder $query, $date): Builder => $query->whereDate('date', '<=', $date),
                             );
-                    })
+                    }),
             ])
             ->actions([
 

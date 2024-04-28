@@ -11,6 +11,6 @@ class Rate extends Model
 
     protected $fillable = [
         'rate',
-        'date'
+        'date',
     ];
 }
