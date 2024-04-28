@@ -28,10 +28,9 @@ class RateImporter extends Importer
 
     public function resolveRecord(): ?Rate
     {
-        $date = Carbon::createFromFormat('d.m.Y', $this->data['date'])->format('Y-m-d');
 
          return Rate::create([
-             'date' => $date,
+             'date' => $this->data['date'],
              'rate' => $this->data['rate']
          ]);
 
