@@ -8,7 +8,7 @@ use Illuminate\Support\Carbon;
 
 class RatesChart extends ChartWidget
 {
-    protected static ?string $heading = "Last Week Rates";
+    protected static ?string $heading = 'Last Week Rates';
 
     protected function getData(): array
     {
@@ -38,5 +38,4 @@ class RatesChart extends ChartWidget
     {
         return 'line';
     }
-
 }

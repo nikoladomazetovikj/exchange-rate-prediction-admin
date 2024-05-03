@@ -3,7 +3,6 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Prediction;
-use App\Models\Rate;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Support\Carbon;
 
