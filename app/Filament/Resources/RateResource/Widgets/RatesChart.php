@@ -8,8 +8,6 @@ class RatesChart extends ChartWidget
 {
     protected static ?string $heading = 'Rates';
 
-    public ?string $filter = 'this_week';
-
     protected function getData(): array
     {
         return [
@@ -30,12 +28,4 @@ class RatesChart extends ChartWidget
         return 'line';
     }
 
-    protected function getFilters(): ?array
-    {
-        return [
-            'this_week' => 'This Week',
-            'month' => 'Last month',
-            'year' => 'This year',
-        ];
-    }
 }
