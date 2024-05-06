@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Filament\Resources\RateResource;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\RatesResource;
 use App\Models\Prediction;
 use App\Models\Rate;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class ExchangePredictionController extends Controller
 {

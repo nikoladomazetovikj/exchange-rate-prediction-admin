@@ -6,7 +6,6 @@ use App\Models\Prediction;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 
 class CallPredictionsApi extends Command
 {
@@ -32,7 +31,7 @@ class CallPredictionsApi extends Command
         $client = new Client();
 
         try {
-            $response = $client->request('GET', env("PREDICTION_API_URL"));
+            $response = $client->request('GET', env('PREDICTION_API_URL'));
 
             if ($response->getStatusCode() === 200) {
                 $body = $response->getBody()->getContents();
@@ -47,10 +46,10 @@ class CallPredictionsApi extends Command
                     ]);
                 }
             } else {
-                $this->error('Failed to fetch predictions. Status code: ' . $response->getStatusCode());
+                $this->error('Failed to fetch predictions. Status code: '.$response->getStatusCode());
             }
         } catch (\Exception $e) {
-            $this->error('Error calling predictions API: ' . $e->getMessage());
+            $this->error('Error calling predictions API: '.$e->getMessage());
         }
 
     }
@@ -62,6 +61,7 @@ class CallPredictionsApi extends Command
         for ($i = 0; $i < 7; $i++) {
             $dates[] = $start->copy()->addDays($i)->toDateString();
         }
+
         return $dates;
     }
 }
