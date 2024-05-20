@@ -57,7 +57,7 @@ class CallPredictionsApi extends Command
     private function getNextWeekDates(): array
     {
         $dates = [];
-        $start = Carbon::now()->startOfWeek()->addWeek();
+        $start = Carbon::now()->startOfWeek();
         for ($i = 0; $i < 7; $i++) {
             $dates[] = $start->copy()->addDays($i)->toDateString();
         }
