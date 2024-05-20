@@ -8,12 +8,12 @@ use Illuminate\Support\Carbon;
 
 class PredictionsChart extends ChartWidget
 {
-    protected static ?string $heading = 'Last Week Predictions';
+    protected static ?string $heading = 'Current Week Predictions';
 
     protected function getData(): array
     {
-        $startOfPreviousWeek = Carbon::now()->subWeek()->startOfWeek();
-        $endOfPreviousWeek = Carbon::now()->subWeek()->endOfWeek();
+        $startOfPreviousWeek = Carbon::now()->startOfWeek();
+        $endOfPreviousWeek = Carbon::now()->endOfWeek();
 
         $predictions = Prediction::whereBetween('date', [$startOfPreviousWeek, $endOfPreviousWeek])->get();
 
