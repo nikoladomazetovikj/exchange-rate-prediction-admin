@@ -40,6 +40,7 @@ class CallPredictionsApi extends Command
                 $dates = $this->getNextWeekDates();
                 foreach ($predictions[0] as $index => $prediction) {
                     $date = $dates[$index];
+                    Prediction::where('date', $date)->delete();
                     Prediction::create([
                         'rate' => $prediction,
                         'date' => $date,
