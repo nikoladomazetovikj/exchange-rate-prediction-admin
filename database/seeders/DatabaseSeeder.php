@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             RateSeeder::class,
+            PredictionSeeder::class
         ]);
     }
 }
